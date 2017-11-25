@@ -56,28 +56,28 @@ RSpec.describe Codebreaker do
         input = '5555'
 
         expect(output).to receive(:puts).with('')
-    
+
         game.guess(input)
       end
     end
-    #
-    # context "[C] with 1 match" do
-    #   it "A number match sends a mark with '-'" do
-    #     game.start('1234')
-    #     input = '2555'
-    #     expect(output).to receive(:puts).with('-')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "An exact match sends a mark with '+'" do
-    #     game.start('1234')
-    #     input = '1555'
-    #     expect(output).to receive(:puts).with('+')
-    #
-    #     game.guess(input)
-    #   end
-    # end
+
+    context "[C] with 1 match" do
+      it "A number match sends a mark with '-'" do
+        game.start('1234')
+        input = '2555'
+        expect(output).to receive(:puts).with('-')
+
+        game.guess(input)
+      end
+
+      it "An exact match sends a mark with '+'" do
+        game.start('1234')
+        input = '1555'
+        expect(output).to receive(:puts).with('+')
+
+        game.guess(input)
+      end
+    end
     #
     # context "[D] with 2 matches" do
     #   it "2 number matches sends a mark with '--'" do
