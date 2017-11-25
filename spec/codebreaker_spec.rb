@@ -50,16 +50,16 @@ RSpec.describe Codebreaker do
       end
     end
 
-    # context "[B] with no matches" do
-    #   it "sends a mark with ''" do
-    #     game.start('1234')
-    #     input = '5555'
-    #
-    #     expect(output).to receive(:puts).with('')
-    #
-    #     game.guess(input)
-    #   end
-    # end
+    context "[B] with no matches" do
+      it "sends a mark with ''" do
+        game.start('1234')
+        input = '5555'
+
+        expect(output).to receive(:puts).with('')
+    
+        game.guess(input)
+      end
+    end
     #
     # context "[C] with 1 match" do
     #   it "A number match sends a mark with '-'" do

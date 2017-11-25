@@ -14,13 +14,24 @@ class Codebreaker
     end
 
     def guess(input)
-			guessed_number_array(input)
-			secret_number_array
-			check_input_type(input)
-
+			basic_setup(input)
+			no_matches(input)
     end
 
 		private
+
+		def basic_setup(input)
+			guessed_number_array(input)
+			secret_number_array
+			check_input_type(input)
+			match_count(input)
+		end
+
+		def no_matches(input)
+			if @match_count == 0
+				output.puts ""
+			end
+		end
 
 		def check_input_type(input)
 			if @guessed_number_array.size !=4 || @guessed_number_array.include?(String)
@@ -34,6 +45,16 @@ class Codebreaker
 
 		def secret_number_array
 			@secret_number_array = @secret_number.to_s.chars.map(&:to_i)
+		end
+
+		def match_count(input)
+			count = 0
+			guessed_array = guessed_number_array(input)
+			secret_array = secret_number_array
+			guessed_array.uniq.each do |digit|
+				count += 1 if secret_array.include?(digit)
+			end
+			@match_count = count
 		end
   end
 end
