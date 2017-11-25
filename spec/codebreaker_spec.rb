@@ -104,91 +104,91 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
     end
-    #
-    # context "[E] with 3 matches" do
-    #   it "3 exact matches sends a mark with '+++'" do
-    #     game.start('1234')
-    #     input = '1235'
-    #     expect(output).to receive(:puts).with('+++')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "3 number matches sends a mark with '---'" do
-    #     game.start('1234')
-    #     input = '5123'
-    #     expect(output).to receive(:puts).with('---')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "2 exact matches and 1 number match (in that order) sends a mark with '++-'" do
-    #     game.start('1234')
-    #     input = '1245'
-    #     expect(output).to receive(:puts).with('++-')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "1 exact match, 1 number match and 1 exact match (in that order) sends a mark with '++-'" do
-    #     game.start('1234')
-    #     input = '1435'
-    #     expect(output).to receive(:puts).with('++-')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "1 number match and 2 exact matches (in that order) sends a mark with '++-'" do
-    #     game.start('1234')
-    #     input = '4235'
-    #     expect(output).to receive(:puts).with('++-')
-    #
-    #     game.guess(input)
-    #   end
-    # end
-    #
-    # context "[F] with 4 matches" do
-    #   it "4 exact matches sends a mark with '++++'" do
-    #     game.start('1234')
-    #     input = '1234'
-    #     expect(output).to receive(:puts).with('++++')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "4 number matches sends a mark with '----'" do
-    #     game.start('1234')
-    #     input = '4321'
-    #     expect(output).to receive(:puts).with('----')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "1 number match, 2 exact matches, and 1 number match (in that order) sends a mark with '++--'" do
-    #     game.start('1234')
-    #     input = '4231'
-    #     expect(output).to receive(:puts).with('++--')
-    #
-    #     game.guess(input)
-    #   end
-    # end
-    #
-    # context "[G] with ambiguous matches" do
-    #   it "number matches just count once" do
-    #     game.start('1234')
-    #     input = '5111'
-    #     expect(output).to receive(:puts).with('-')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "exact match overrules a number match" do
-    #     game.start('1234')
-    #     input = '1111'
-    #     expect(output).to receive(:puts).with('+')
-    #
-    #     game.guess(input)
-    #   end
-    # end
+
+    context "[E] with 3 matches" do
+      it "3 exact matches sends a mark with '+++'" do
+        game.start('1234')
+        input = '1235'
+        expect(output).to receive(:puts).with('+++')
+
+        game.guess(input)
+      end
+
+      it "3 number matches sends a mark with '---'" do
+        game.start('1234')
+        input = '5123'
+        expect(output).to receive(:puts).with('---')
+
+        game.guess(input)
+      end
+
+      it "2 exact matches and 1 number match (in that order) sends a mark with '++-'" do
+        game.start('1234')
+        input = '1245'
+        expect(output).to receive(:puts).with('++-')
+
+        game.guess(input)
+      end
+
+      it "1 exact match, 1 number match and 1 exact match (in that order) sends a mark with '++-'" do
+        game.start('1234')
+        input = '1435'
+        expect(output).to receive(:puts).with('++-')
+
+        game.guess(input)
+      end
+
+      it "1 number match and 2 exact matches (in that order) sends a mark with '++-'" do
+        game.start('1234')
+        input = '4235'
+        expect(output).to receive(:puts).with('++-')
+
+        game.guess(input)
+      end
+    end
+
+    context "[F] with 4 matches" do
+      it "4 exact matches sends a mark with '++++'" do
+        game.start('1234')
+        input = '1234'
+        expect(output).to receive(:puts).with('++++')
+
+        game.guess(input)
+      end
+
+      it "4 number matches sends a mark with '----'" do
+        game.start('1234')
+        input = '4321'
+        expect(output).to receive(:puts).with('----')
+
+        game.guess(input)
+      end
+
+      it "1 number match, 2 exact matches, and 1 number match (in that order) sends a mark with '++--'" do
+        game.start('1234')
+        input = '4231'
+        expect(output).to receive(:puts).with('++--')
+
+        game.guess(input)
+      end
+    end
+
+    context "[G] with ambiguous matches" do
+      it "number matches just count once" do
+        game.start('1234')
+        input = '5111'
+        expect(output).to receive(:puts).with('-')
+
+        game.guess(input)
+      end
+
+      it "exact match overrules a number match" do
+        game.start('1234')
+        input = '1111'
+        expect(output).to receive(:puts).with('+')
+
+        game.guess(input)
+      end
+    end
   end
 end

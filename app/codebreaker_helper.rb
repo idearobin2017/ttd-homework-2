@@ -6,22 +6,6 @@ def number_match(input)
 	output.puts "+" * exact_count << "-" * (@match_count - exact_count)
 end
 
-# def exact_number_match(input)
-# 	exact_count = 0
-# 	4.times do |index|
-# 		exact_count += 1 if @guessed_number_array[index] == @secret_number_array[index]
-# 	end
-# 	output.puts "+" * exact_count
-# end
-
-# def number_match(input)
-# 	count = 0
-# 	@guessed_number_array.each do |i|
-# 		count += 1 if @secret_number_array.include?(i)
-# 	end
-# 	output.puts "-" * count
-# end
-
 def no_matches(input)
 	if @match_count == 0
 		output.puts ""
@@ -34,8 +18,6 @@ def basic_setup(input)
 	check_input_type(input)
 	match_count(input)
 end
-
-
 
 def check_input_type(input)
 	if @guessed_number_array.size !=4 || @guessed_number_array.include?(String)

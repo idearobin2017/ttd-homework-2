@@ -20,6 +20,5 @@ class Codebreaker
 			no_matches(input)
 			number_match(input)
     end
-
   end
 end
