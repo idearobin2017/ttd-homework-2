@@ -19,6 +19,7 @@ class Codebreaker
 			basic_setup(input)
 			no_matches(input)
 			number_match(input)
+			exact_number_match(input)
     end
 
   end
