@@ -78,32 +78,32 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
     end
-    #
-    # context "[D] with 2 matches" do
-    #   it "2 number matches sends a mark with '--'" do
-    #     game.start('1234')
-    #     input = '2355'
-    #     expect(output).to receive(:puts).with('--')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "1 number match and 1 exact match (in that order) sends a mark with '+-'" do
-    #     game.start('1234')
-    #     input = '2535'
-    #     expect(output).to receive(:puts).with('+-')
-    #
-    #     game.guess(input)
-    #   end
-    #
-    #   it "1 exact match and 1 number match (in that order) sends a mark with '+-'" do
-    #     game.start('1234')
-    #     input = '1525'
-    #     expect(output).to receive(:puts).with('+-')
-    #
-    #     game.guess(input)
-    #   end
-    # end
+
+    context "[D] with 2 matches" do
+      it "2 number matches sends a mark with '--'" do
+        game.start('1234')
+        input = '2355'
+        expect(output).to receive(:puts).with('--')
+
+        game.guess(input)
+      end
+
+      it "1 number match and 1 exact match (in that order) sends a mark with '+-'" do
+        game.start('1234')
+        input = '2535'
+        expect(output).to receive(:puts).with('+-')
+
+        game.guess(input)
+      end
+
+      it "1 exact match and 1 number match (in that order) sends a mark with '+-'" do
+        game.start('1234')
+        input = '1525'
+        expect(output).to receive(:puts).with('+-')
+
+        game.guess(input)
+      end
+    end
     #
     # context "[E] with 3 matches" do
     #   it "3 exact matches sends a mark with '+++'" do

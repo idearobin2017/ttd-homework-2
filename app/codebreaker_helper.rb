@@ -1,14 +1,26 @@
-def exact_number_match(input)
+def number_match(input)
+	exact_count = 0
 	4.times do |index|
-		output.puts "+" if @guessed_number_array[index] == @secret_number_array[index]
+		exact_count += 1 if @guessed_number_array[index] == @secret_number_array[index]
 	end
+	output.puts "+" * exact_count << "-" * (@match_count - exact_count)
 end
 
-def number_match(input)
-	@guessed_number_array.each do |i|
-		output.puts "-" if @secret_number_array.include?(i)
-	end
-end
+# def exact_number_match(input)
+# 	exact_count = 0
+# 	4.times do |index|
+# 		exact_count += 1 if @guessed_number_array[index] == @secret_number_array[index]
+# 	end
+# 	output.puts "+" * exact_count
+# end
+
+# def number_match(input)
+# 	count = 0
+# 	@guessed_number_array.each do |i|
+# 		count += 1 if @secret_number_array.include?(i)
+# 	end
+# 	output.puts "-" * count
+# end
 
 def no_matches(input)
 	if @match_count == 0
