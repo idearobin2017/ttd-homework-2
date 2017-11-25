@@ -19,6 +19,8 @@ def basic_setup(input)
 	match_count(input)
 end
 
+private
+
 def check_input_type(input)
 	if @guessed_number_array.size !=4 || @guessed_number_array.include?(String)
 		output.puts "Try guessing a number with four digits"
@@ -35,10 +37,8 @@ end
 
 def match_count(input)
 	count = 0
-	guessed_array = guessed_number_array(input)
-	secret_array = secret_number_array
-	guessed_array.uniq.each do |digit|
-		count += 1 if secret_array.include?(digit)
+	@guessed_number_array.uniq.each do |digit|
+		count += 1 if @secret_number_array.include?(digit)
 	end
 	@match_count = count
 end
