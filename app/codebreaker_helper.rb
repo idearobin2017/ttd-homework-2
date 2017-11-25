@@ -6,12 +6,6 @@ def number_match(input)
 	output.puts "+" * exact_count << "-" * (@match_count - exact_count)
 end
 
-def no_matches(input)
-	if @match_count == 0
-		output.puts ""
-	end
-end
-
 def basic_setup(input)
 	guessed_number_array(input)
 	secret_number_array
@@ -36,9 +30,8 @@ def secret_number_array
 end
 
 def match_count(input)
-	count = 0
+	@match_count = 0
 	@guessed_number_array.uniq.each do |digit|
-		count += 1 if @secret_number_array.include?(digit)
+		@match_count += 1 if @secret_number_array.include?(digit)
 	end
-	@match_count = count
 end
