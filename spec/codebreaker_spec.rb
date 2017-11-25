@@ -31,14 +31,14 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
 
-    #   it "gives guidance on wrong formatted guesses" do
-    #     ['333', '55555'].each do |input|
-    #       game.start('1234')
-    #       expect(output).to receive(:puts).with("Try guessing a number with four digits")
-    #
-    #       game.guess(input)
-    #     end
-    #   end
+      it "gives guidance on wrong formatted guesses" do
+        ['333', '55555'].each do |input|
+          game.start('1234')
+          expect(output).to receive(:puts).with("Try guessing a number with four digits")
+
+          game.guess(input)
+        end
+      end
     #
     #   it "does not give guidance on correct formatted guesses" do
     #     input = '4444'
