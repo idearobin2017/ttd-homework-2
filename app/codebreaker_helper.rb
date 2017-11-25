@@ -1,9 +1,9 @@
 def number_match(input)
-	exact_count = 0
+	exact_number_count = 0
 	4.times do |index|
-		exact_count += 1 if @guessed_number_array[index] == @secret_number_array[index]
+		exact_number_count += 1 if @guessed_number_array[index] == @secret_number_array[index]
 	end
-	output.puts "+" * exact_count << "-" * (@match_count - exact_count)
+	"+" * exact_number_count << "-" * (@match_count - exact_number_count)
 end
 
 def basic_setup(input)
@@ -16,9 +16,9 @@ end
 private
 
 def check_input_type(input)
-	if @guessed_number_array.size !=4 || @guessed_number_array.include?(String)
-		output.puts "Try guessing a number with four digits"
-	end
+	output.puts "Try guessing a number with four digits" if
+			@guessed_number_array.size !=4 ||
+						@guessed_number_array.include?(String)
 end
 
 def guessed_number_array(input)
