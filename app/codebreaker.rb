@@ -17,8 +17,7 @@ class Codebreaker
 
     def guess(input)
 			basic_setup(input)
-			no_matches(input)
-			number_match(input)
+			output.puts @match_count == 0 ?  "" : number_match(input)
     end
   end
 end
