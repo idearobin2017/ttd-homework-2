@@ -23,8 +23,9 @@ class Codebreaker
 		private
 
 		def check_input_type(input)
-			output.puts "Try guessing a number with four digits" if
-						(@guessed_number_array.size !=4 || @guessed_number_array.include?(String))
+			if @guessed_number_array.size !=4 || @guessed_number_array.include?(String)
+				output.puts "Try guessing a number with four digits"
+			end
 		end
 
 		def guessed_number_array(input)

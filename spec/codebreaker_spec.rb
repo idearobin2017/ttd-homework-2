@@ -39,17 +39,17 @@ RSpec.describe Codebreaker do
           game.guess(input)
         end
       end
-    #
-    #   it "does not give guidance on correct formatted guesses" do
-    #     input = '4444'
-    #
-    #     game.start('1234')
-    #     expect(output).to_not receive(:puts).with("Try guessing a number with four digits")
-    #
-    #     game.guess(input)
-    #   end
-    # end
-    #
+
+      it "does not give guidance on correct formatted guesses" do
+        input = '4444'
+
+        game.start('1234')
+        expect(output).to_not receive(:puts).with("Try guessing a number with four digits")
+
+        game.guess(input)
+      end
+    end
+
     # context "[B] with no matches" do
     #   it "sends a mark with ''" do
     #     game.start('1234')
@@ -189,6 +189,6 @@ RSpec.describe Codebreaker do
     #
     #     game.guess(input)
     #   end
-    end
+    # end
   end
 end
